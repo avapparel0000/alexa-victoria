@@ -280,8 +280,11 @@ export default function AdminProductsPage() {
                 <tr key={product.id} className="hover:bg-gray-50">
                   <td className="p-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0">
-                        <span className="text-[10px] text-gray-400 font-bold">AV</span>
+                      <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                        {product.images && product.images[0] ? (
+                          <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                        ) : null}
+                        <span className={`text-[10px] text-gray-400 font-bold ${product.images && product.images[0] ? 'hidden' : 'flex'}`}>AV</span>
                       </div>
                       <div className="min-w-0">
                         <p className="font-medium truncate max-w-[200px]">{product.name}</p>

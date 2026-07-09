@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect, useMemo } from "react";
 import { FiSearch, FiAlertTriangle, FiPackage } from "react-icons/fi";
 import toast from "react-hot-toast";
@@ -160,8 +160,11 @@ export default function AdminInventoryPage() {
                 onClick={() => setExpandedProduct(isExpanded ? null : product.id)}
                 className="w-full flex items-center gap-4 p-4 text-left hover:bg-gray-50"
               >
-                <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0">
-                  <span className="text-[10px] text-gray-400 font-bold">AV</span>
+                <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  {product.images && product.images[0] ? (
+                    <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                  ) : null}
+                  <span className={`text-[10px] text-gray-400 font-bold ${product.images && product.images[0] ? 'hidden' : 'flex'}`}>AV</span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium truncate">{product.name}</p>

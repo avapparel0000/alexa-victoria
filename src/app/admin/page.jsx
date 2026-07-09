@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiDollarSign, FiShoppingCart, FiPackage, FiUsers, FiTrendingUp, FiAlertCircle } from "react-icons/fi";
@@ -122,8 +122,11 @@ export default function AdminDashboard() {
             {topProducts.map((p, i) => (
               <div key={p.id} className="p-4 flex items-center gap-3">
                 <span className="text-xs font-medium text-gray-400 w-5">{i + 1}</span>
-                <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0">
-                  <span className="text-[10px] text-gray-400 font-bold">AV</span>
+                <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  {p.images && p.images[0] ? (
+                    <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                  ) : null}
+                  <span className={`text-[10px] text-gray-400 font-bold ${p.images && p.images[0] ? 'hidden' : 'flex'}`}>AV</span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium truncate">{p.name}</p>

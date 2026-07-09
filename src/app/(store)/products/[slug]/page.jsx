@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, notFound } from "next/navigation";
 import Link from "next/link";
-import { FiHeart, FiChevronDown, FiTruck, FiRotateCw, FiShield, FiCheck } from "react-icons/fi";
+import { FiHeart, FiChevronDown, FiChevronLeft, FiChevronRight, FiTruck, FiRotateCw, FiShield, FiCheck } from "react-icons/fi";
 import toast from "react-hot-toast";
 import { useProducts } from "@/context/ProductsContext";
 import { useCart } from "@/context/CartContext";
@@ -131,7 +131,7 @@ export default function ProductDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pb-12">
         {/* Gallery */}
         <div className="space-y-3">
-          <div className="aspect-[3/4] bg-gray-100 overflow-hidden relative">
+          <div className="aspect-[3/4] bg-gray-100 overflow-hidden relative group">
             {product.images && product.images.length > 0 ? (
               <img
                 src={product.images[selectedImageIndex] || product.images[0]}
@@ -147,6 +147,25 @@ export default function ProductDetailPage() {
                 <p className="text-xs text-gray-300 mt-1">{selectedColor}</p>
               </div>
             </div>
+            {/* Left / Right nav arrows */}
+            {product.images && product.images.length > 1 && (
+              <>
+                <button
+                  onClick={() => setSelectedImageIndex((prev) => prev <= 0 ? product.images.length - 1 : prev - 1)}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-gray-700 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-label="Previous image"
+                >
+                  <FiChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={() => setSelectedImageIndex((prev) => prev >= product.images.length - 1 ? 0 : prev + 1)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-gray-700 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-label="Next image"
+                >
+                  <FiChevronRight size={18} />
+                </button>
+              </>
+            )}
           </div>
           {product.images && product.images.length > 1 && (
             <div className="grid grid-cols-4 gap-2">
