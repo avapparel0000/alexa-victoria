@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 import { useState, useMemo, useEffect } from "react";
-import { FiSearch, FiPlus, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
+import { FiSearch, FiPlus, FiEdit2, FiTrash2, FiX, FiImage } from "react-icons/fi";
 import toast from "react-hot-toast";
 import { fetchProducts, addProduct, updateProduct, deleteProduct } from "@/lib/firestore";
 
@@ -32,6 +32,7 @@ export default function AdminProductsPage() {
       isBestSeller: false, isNew: false,
       tags: "",
       variants: [{ size: "", color: "", colorHex: "#111111", stock: "" }],
+      colorImages: {},
     };
   }
 
@@ -78,6 +79,7 @@ export default function AdminProductsPage() {
       isNew: product.isNew || false,
       tags: (product.tags || []).join(", "),
       variants: (product.variants || []).map((v) => ({ ...v, stock: v.stock?.toString() || "0" })),
+      colorImages: product.colorImages || {},
     });
     setShowModal(true);
   };
@@ -87,8 +89,45 @@ export default function AdminProductsPage() {
       toast.error("Name, category, gender, and price are required");
       return;
     }
+
+    // ── Variant validation ─────────────────────────────
+    const incompleteRows = form.variants
+      .map((v, i) => ({ ...v, row: i + 1 }))
+      .filter((v) => (v.size && !v.color) || (!v.size && v.color));
+    if (incompleteRows.length > 0) {
+      toast.error(`Variant row${incompleteRows.length > 1 ? "s" : ""} ${incompleteRows.map((r) => r.row).join(", ")} incomplete — fill in both size and color, or remove`);
+      return;
+    }
+    const validVariants = form.variants.filter((v) => v.size && v.color);
+    const seen = new Set();
+    for (const v of validVariants) {
+      const key = `${v.size}||${v.color}`;
+      if (seen.has(key)) {
+        toast.error(`Duplicate variant: size "${v.size}" + color "${v.color}". Remove the duplicate.`);
+        return;
+      }
+      seen.add(key);
+    }
+
     setSaving(true);
-    const slug = form.slug || form.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    let slug = form.slug || form.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    // Ensure slug is unique among existing products
+    const otherSlugs = new Set(allProducts.filter((p) => !editProduct || p.id !== editProduct.id).map((p) => p.slug));
+    if (otherSlugs.has(slug)) {
+      let n = 2;
+      while (otherSlugs.has(`${slug}-${n}`)) n++;
+      slug = `${slug}-${n}`;
+    }
+    const savedImages = form.images.filter((i) => i.trim());
+
+    // Clean colorImages — drop stale entries
+    const cleanColorImages = {};
+    for (const [color, idx] of Object.entries(form.colorImages || {})) {
+      if (typeof idx === 'number' && idx >= 0 && idx < savedImages.length) {
+        cleanColorImages[color] = idx;
+      }
+    }
+
     const productData = {
       slug,
       name: form.name,
@@ -101,10 +140,11 @@ export default function AdminProductsPage() {
       price: parseFloat(form.price) || 0,
       salePrice: form.salePrice ? parseFloat(form.salePrice) : null,
       discount: form.discount ? parseInt(form.discount) : 0,
-      images: form.images.filter((i) => i.trim()),
-      variants: form.variants
-        .filter((v) => v.size && v.color)
-        .map((v) => ({ ...v, stock: parseInt(v.stock) || 0 })),
+      images: savedImages,
+      colorImages: cleanColorImages,
+      variants: validVariants.map((v) => ({
+        size: v.size, color: v.color, colorHex: v.colorHex, stock: parseInt(v.stock) || 0,
+      })),
       isBestSeller: form.isBestSeller,
       isNew: form.isNew,
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
@@ -165,7 +205,27 @@ export default function AdminProductsPage() {
   };
 
   const removeImage = (idx) => {
-    setForm((f) => ({ ...f, images: f.images.filter((_, i) => i !== idx) }));
+    setForm((f) => {
+      const newImages = f.images.filter((_, i) => i !== idx);
+      // Adjust colorImages single-index after image removal
+      const updated = {};
+      for (const [color, val] of Object.entries(f.colorImages || {})) {
+        if (val === idx) continue; // removed image — drop link
+        updated[color] = val > idx ? val - 1 : val;
+      }
+      return { ...f, images: newImages, colorImages: updated };
+    });
+  };
+
+  const toggleColorImage = (color, imgIdx) => {
+    setForm((f) => {
+      const current = f.colorImages[color];
+      // Click same image again = deselect, otherwise select new one
+      const next = current === imgIdx ? undefined : imgIdx;
+      const copy = { ...f.colorImages };
+      if (next === undefined) { delete copy[color]; } else { copy[color] = next; }
+      return { ...f, colorImages: copy };
+    });
   };
 
   if (loading) return <div className="py-20 text-center text-sm text-gray-400">Loading products from database...</div>;
@@ -401,6 +461,48 @@ export default function AdminProductsPage() {
                   ))}
                 </div>
               </div>
+              {/* Link Images to Colors */}
+              {(() => {
+                const filled = form.images.filter((img) => img.trim());
+                const uniqueColors = [...new Set(form.variants.filter((v) => v.color).map((v) => v.color))];
+                if (filled.length === 0 || uniqueColors.length === 0) return null;
+                return (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <FiImage size={14} className="text-gray-500" />
+                      <label className="text-xs font-medium">Link Images to Colors</label>
+                    </div>
+                    <p className="text-[10px] text-gray-400 mb-3">Click thumbnails to assign images to each color. Colors without linked images will show all images.</p>
+                    <div className="space-y-3 max-h-60 overflow-y-auto">
+                      {uniqueColors.map((color) => {
+                        const hex = form.variants.find((v) => v.color === color)?.colorHex;
+                        const linkedIdx = form.colorImages[color];
+                        return (
+                          <div key={color} className="border border-gray-200 rounded-sm p-2.5">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="w-4 h-4 rounded-full border border-gray-300 flex-shrink-0" style={{ backgroundColor: hex || '#ccc' }} />
+                              <span className="text-xs font-medium">{color}</span>
+                              <span className="text-[10px] text-gray-400 ml-auto">{typeof linkedIdx === 'number' ? '1 selected' : 'none'}</span>
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {filled.map((img, fi) => {
+                                const realIdx = form.images.indexOf(img);
+                                const on = linkedIdx === realIdx;
+                                return (
+                                  <button key={fi} type="button" onClick={() => toggleColorImage(color, realIdx)}
+                                    className={`w-12 h-12 border-2 rounded-sm overflow-hidden flex-shrink-0 transition-all ${on ? 'border-black ring-1 ring-black' : 'border-gray-200 opacity-40 hover:opacity-70'}`}>
+                                    <img src={img} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
             <div className="flex items-center justify-end gap-3 p-5 border-t">
               <button onClick={() => setShowModal(false)} className="px-4 py-2 text-xs text-gray-500 hover:text-black">Cancel</button>

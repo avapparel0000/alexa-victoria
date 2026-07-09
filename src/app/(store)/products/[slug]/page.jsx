@@ -44,6 +44,15 @@ export default function ProductDetailPage() {
     if (selectedSize) setSizeNudge(false);
   }, [selectedSize]);
 
+  // When color changes, jump to its linked image (if any)
+  useEffect(() => {
+    if (!product || !selectedColor) return;
+    const linked = (product.colorImages || {})[selectedColor];
+    if (typeof linked === 'number' && linked >= 0 && linked < (product.images || []).length) {
+      setSelectedImageIndex(linked);
+    }
+  }, [selectedColor, product]);
+
   if (productsLoading) {
     return (
       <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 text-center">
@@ -78,6 +87,7 @@ export default function ProductDetailPage() {
   const selectedVariant = product.variants.find(
     (v) => v.color === selectedColor && v.size === selectedSize
   );
+
 
   const handleAddToBag = () => {
     if (!selectedSize) {
@@ -124,7 +134,7 @@ export default function ProductDetailPage() {
           <div className="aspect-[3/4] bg-gray-100 overflow-hidden relative">
             {product.images && product.images.length > 0 ? (
               <img
-                src={product.images[selectedImageIndex || 0]}
+                src={product.images[selectedImageIndex] || product.images[0]}
                 alt={`${product.name} - ${selectedColor}`}
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
@@ -144,7 +154,7 @@ export default function ProductDetailPage() {
                 <button
                   key={i}
                   onClick={() => setSelectedImageIndex(i)}
-                  className={`aspect-square bg-gray-100 overflow-hidden border-2 ${(selectedImageIndex || 0) === i ? 'border-black' : 'border-transparent'}`}
+                  className={`aspect-square bg-gray-100 overflow-hidden border-2 ${selectedImageIndex === i ? 'border-black' : 'border-transparent'}`}
                 >
                   <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
                 </button>
@@ -203,7 +213,7 @@ export default function ProductDetailPage() {
                 return (
                   <button
                     key={color}
-                    onClick={() => { setSelectedColor(color); setSelectedSize(""); }}
+                    onClick={() => { setSelectedColor(color); setSelectedSize(""); setSelectedImageIndex(0); }}
                     className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
                       selectedColor === color ? "border-black" : "border-gray-200 hover:border-gray-400"
                     }`}
