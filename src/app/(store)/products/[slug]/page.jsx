@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect, useRef } from "react";
 import { useParams, notFound } from "next/navigation";
 import Link from "next/link";
@@ -271,6 +271,16 @@ export default function ProductDetailPage() {
 
           {/* Add to Bag */}
           <div className="mb-6">
+            {/* Polite size reminder */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                sizeNudge ? "max-h-16 opacity-100 mb-3" : "max-h-0 opacity-0 mb-0"
+              }`}
+            >
+              <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2 text-center">
+                Please select a size before adding to bag
+              </p>
+            </div>
             <div className="flex gap-3">
               <button
                 onClick={handleAddToBag}

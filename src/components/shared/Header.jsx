@@ -34,7 +34,7 @@ const NAV_LINKS = [
       { label: "Denim", href: "/products?gender=Men&subcategory=Jeans" },
     ],
   },
-  { label: "Underwear", href: "/products?category=Underwear" },
+  // { label: "Underwear", href: "/products?category=Underwear" },
   { label: "Kids", href: "/products?gender=Kids" },
   { label: "Sale", href: "/products?sale=true" },
 ];
@@ -67,7 +67,7 @@ export default function Header() {
     if (dismissed) { setOfferDismissed(true); return; }
     fetchSiteOffers()
       .then((data) => setOffers(data.filter((o) => o.active)))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const dismissOffer = () => {
@@ -121,7 +121,7 @@ export default function Header() {
               src="/home-v2/assets/images/logo-dark.png"
               alt="AV APPAREL"
               className="h-8 nav:h-10 w-auto object-contain brightness-0"
-              style={{width: "60px"}}
+              style={{ width: "60px" }}
             />
           </Link>
 
@@ -136,9 +136,8 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className={`px-3 py-2 text-[13px] font-normal tracking-wide hover:underline underline-offset-4 ${
-                    link.label === "Sale" ? "text-red-600" : "text-black"
-                  }`}
+                  className={`px-3 py-2 text-[13px] font-normal tracking-wide hover:underline underline-offset-4 ${link.label === "Sale" ? "text-red-600" : "text-black"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -308,9 +307,8 @@ export default function Header() {
                 <div key={link.label}>
                   <Link
                     href={link.href}
-                    className={`block px-5 py-3 text-sm font-medium border-b border-gray-50 ${
-                      link.label === "Sale" ? "text-red-600" : ""
-                    }`}
+                    className={`block px-5 py-3 text-sm font-medium border-b border-gray-50 ${link.label === "Sale" ? "text-red-600" : ""
+                      }`}
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}

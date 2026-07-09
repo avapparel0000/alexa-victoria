@@ -81,7 +81,7 @@ export default function HomePage() {
             />
             {(activeOffer.linkWomen || activeOffer.linkMen) && (
               <div className="offerbar__links">
-                {activeOffer.linkWomen && (
+                {/* {activeOffer.linkWomen && (
                   <Link
                     className="offerbar__link"
                     href={activeOffer.linkWomen}
@@ -98,7 +98,7 @@ export default function HomePage() {
                   >
                     Men
                   </Link>
-                )}
+                )} */}
               </div>
             )}
             <button
@@ -142,12 +142,12 @@ export default function HomePage() {
                   <Link href="/products?gender=Men" className="hero__navLink">
                     Men
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/products?category=Underwear"
                     className="hero__navLink"
                   >
                     Underwear
-                  </Link>
+                  </Link> */}
                   <Link href="/products?gender=Kids" className="hero__navLink">
                     Kids
                   </Link>
@@ -238,13 +238,13 @@ export default function HomePage() {
                   >
                     Men
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/products?category=Underwear"
                     className="hero__mobileNavLink"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Underwear
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/products?gender=Kids"
                     className="hero__mobileNavLink"

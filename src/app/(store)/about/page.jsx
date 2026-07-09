@@ -76,7 +76,6 @@ export default function AboutPage() {
               { year: "1968", text: "AV APPAREL founded in New York City. First collection: a line of coats." },
               { year: "1978", text: "Launch of AV APPAREL Jeans — denim becomes a fashion statement." },
               { year: "1982", text: "Introduction of AV APPAREL Underwear with the iconic waistband." },
-              { year: "1994", text: "AV One fragrance launches — the first unisex scent for a generation." },
               { year: "2003", text: "Acquired by PVH Corp.; global expansion accelerates." },
               { year: "2017", text: "Raf Simons named Chief Creative Officer, ushering in the AV APPAREL 205W39NYC era." },
               { year: "2020", text: "Sustainability pledge: 100% sustainable cotton and zero waste by 2030." },
