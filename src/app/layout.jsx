@@ -4,9 +4,9 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   icon: "/favicon.ico", // Points to public/favicon.ico
-  title: "AV APPAREL | Official Online Store",
+  title: "Alexa Victoria",
   description:
-    "Shop AV APPAREL for timeless style and modern design. Explore clothing, underwear, and accessories for men, women, and kids.",
+    "Shop Alexa Victoria for timeless style and modern design. Explore clothing, underwear, and accessories for men, women, and kids.",
 };
 
 export default function RootLayout({ children }) {
