@@ -94,12 +94,12 @@ export default function Header() {
           <span dangerouslySetInnerHTML={{ __html: activeOffer.text }} />
           {activeOffer.linkWomen || activeOffer.linkMen ? (
             <span className="hidden nav:inline-flex items-center gap-4 absolute right-12 top-1/2 -translate-y-1/2">
-              {activeOffer.linkWomen && (
+              {/* {activeOffer.linkWomen && (
                 <Link href={activeOffer.linkWomen} className="underline text-xs">Women</Link>
               )}
               {activeOffer.linkMen && (
                 <Link href={activeOffer.linkMen} className="underline text-xs">Men</Link>
-              )}
+              )} */}
             </span>
           ) : null}
           <button
