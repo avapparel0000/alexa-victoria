@@ -1,4 +1,4 @@
-AV Apparel - Next.js App
+Alexa Victoria - Next.js App
 ========================
 
 # Development
