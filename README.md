@@ -25,4 +25,4 @@ src/
 public/
   assets/                   - All images and SVGs
     page2/                  - Assets used by the products page
-"# AV-Apparel" 
+"# alexa-victoria" 

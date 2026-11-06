@@ -6449,7 +6449,7 @@
           <div className="figma-node n-21-3517">
             Discover your new look with modern and timeless menÃ¢â‚¬â„¢s
             clothing and accessories at this comprehensive shop page at the
-            official AV APPAREL online store. Mix and match differing styles
+            official Alexa Victoria online store. Mix and match differing styles
             and fits with exclusive styles to cover a wide range of looks you
             wonÃ¢â‚¬â„¢t find anywhere else.
           </div>
@@ -6635,7 +6635,7 @@
           <div className="figma-node n-21-3618">About</div>
           <div className="figma-node n-21-3619">
             <div className="figma-node n-21-3620">
-              <div className="figma-node n-21-3621">About AV APPAREL</div>
+              <div className="figma-node n-21-3621">About Alexa Victoria</div>
             </div>
             <div className="figma-node n-21-3622">
               <div className="figma-node n-21-3623">Careers</div>
@@ -6721,7 +6721,7 @@
           <div className="figma-node n-21-3669">Web ID: 931897789</div>
           <div className="figma-node n-21-3670">|</div>
           <div className="figma-node n-21-3671">
-            Copyright Ã‚Â© 2026 AV APPAREL. All rights reserved.
+            Copyright Ã‚Â© 2026 Alexa Victoria. All rights reserved.
           </div>
           <div className="figma-node n-21-3672">
             <div className="figma-node n-21-3673"></div>

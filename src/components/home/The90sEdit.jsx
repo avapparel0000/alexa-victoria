@@ -16,7 +16,7 @@
         <div className="figma-node n-4-47">The 90s Edit</div>
         <div className="figma-node n-4-48">
           Iconic then. Iconic now. Minimalism that defined an era, styled for
-          today. Captured at AV APPAREL&apos;s original New York office.
+          today. Captured at Alexa Victoria&apos;s original New York office.
         </div>
         <div className="figma-node n-4-49">
           <div className="figma-node n-4-50">Shop Women</div>

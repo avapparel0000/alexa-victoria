@@ -59,10 +59,10 @@ const FAQ_SECTIONS = [
       },
       {
         q: "Are your products authentic?",
-        a: "Yes, every product sold on our website is 100% authentic AV APPAREL merchandise.",
+        a: "Yes, every product sold on our website is 100% authentic Alexa Victoria merchandise.",
       },
       {
-        q: "How do I care for my AV APPAREL items?",
+        q: "How do I care for my Alexa Victoria items?",
         a: "Care instructions are provided on each product's page under 'Materials & Care.' Generally, we recommend cold machine wash and tumble dry low for most items.",
       },
     ],

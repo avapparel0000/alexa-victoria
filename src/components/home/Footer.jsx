@@ -32,7 +32,7 @@
       {/* About section */}
       <div className="figma-node n-4-151">About</div>
       <div className="figma-node n-4-152">
-        <div className="figma-node n-4-153">About AV APPAREL</div>
+        <div className="figma-node n-4-153">About Alexa Victoria</div>
         <div className="figma-node n-4-154">Careers</div>
         <div className="figma-node n-4-155">Privacy Commitment</div>
         <div className="figma-node n-4-156">Sustainability + Inclusivity</div>
@@ -81,7 +81,7 @@
           <div className="figma-node n-4-196">Cookie Settings</div>
         </div>
         <div className="figma-node n-4-197">
-          © 2026 AV APPAREL. All Rights Reserved.
+          © 2026 Alexa Victoria. All Rights Reserved.
         </div>
       </div>
 

@@ -2,7 +2,7 @@ export default function Navbar() {
   return (
     <div className="figma-node n-4-211">
       <div className="figma-node n-4-216">
-        <div className="figma-node n-14-46">AV Apparel</div>
+        <div className="figma-node n-14-46">Alexa Victoria</div>
         <div className="figma-node n-4-217">New</div>
         <div className="figma-node n-4-218">Women</div>
         <div className="figma-node n-4-219">Men</div>

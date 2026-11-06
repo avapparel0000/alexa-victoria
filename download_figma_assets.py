@@ -27,7 +27,7 @@ def _get(url: str, headers: dict) -> dict:
 
 def _download_file(url: str, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "AV_Apparel-downloader/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Alexa_Victoria-downloader/1.0"})
     with urllib.request.urlopen(req, timeout=120) as resp:
         dest.write_bytes(resp.read())
 

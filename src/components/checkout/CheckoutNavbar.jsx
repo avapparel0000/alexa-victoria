@@ -2,7 +2,7 @@
   return (
     <header className="site-header">
       <div className="header-logo">
-        <img src="https://www.figma.com/api/mcp/asset/116dbb54-1fba-477a-a485-2ec608c753aa" alt="AV APPAREL" />
+        <img src="https://www.figma.com/api/mcp/asset/116dbb54-1fba-477a-a485-2ec608c753aa" alt="Alexa Victoria" />
       </div>
       <nav className="header-nav">
         <a href="#">New</a>

@@ -355,7 +355,7 @@ export default function ProductDetailPage() {
             </div>
             <div className="flex items-start gap-3">
               <FiShield size={16} className="mt-0.5 flex-shrink-0" />
-              <p className="text-xs font-medium">100% Authentic AV APPAREL</p>
+              <p className="text-xs font-medium">100% Authentic Alexa Victoria</p>
             </div>
           </div>
 

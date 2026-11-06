@@ -26,7 +26,7 @@ export default function SustainabilityPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-light tracking-wider mb-6 text-center">OUR VISION</h2>
           <p className="text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
-            At AV APPAREL, we believe that fashion and sustainability must go hand in hand. 
+            At Alexa Victoria, we believe that fashion and sustainability must go hand in hand. 
             Our goal is to minimize our environmental impact while continuing to deliver the modern, 
             minimalist designs our customers love. By 2030, we aim to achieve net-zero carbon emissions 
             across our entire supply chain.
@@ -107,7 +107,7 @@ export default function SustainabilityPage() {
             <div className="border border-gray-200 p-6">
               <h3 className="font-medium mb-2">AV Resale</h3>
               <p className="text-sm text-gray-600">
-                Give your pre-loved AV APPAREL a second life. Our resale platform connects sellers 
+                Give your pre-loved Alexa Victoria a second life. Our resale platform connects sellers 
                 with new owners, extending the life of every garment.
               </p>
             </div>

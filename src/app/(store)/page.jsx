@@ -124,11 +124,11 @@ export default function HomePage() {
             <div className="hero__headerGlass" />
             <div className="hero__headerInner">
               <div className="hero__headerInnerContent">
-                <Link href="/" aria-label="AV APPAREL">
+                <Link href="/" aria-label="Alexa Victoria">
                   <img
                     className="hero__logo"
                     src="/home-v2/assets/images/logo.png"
-                    alt="AV APPAREL"
+                    alt="Alexa Victoria"
                   />
                 </Link>
 
@@ -200,12 +200,12 @@ export default function HomePage() {
                   <Link
                     href="/"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    aria-label="AV APPAREL"
+                    aria-label="Alexa Victoria"
                   >
                     <img
                       className="hero__logo"
                       src="/home-v2/assets/images/logo.png"
-                      alt="AV APPAREL"
+                      alt="Alexa Victoria"
                     />
                   </Link>
                   <button

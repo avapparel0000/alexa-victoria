@@ -16,7 +16,7 @@ export default function TermsConditionsPage() {
       <div className="space-y-8 text-sm text-gray-700 leading-relaxed">
         <section>
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">1. Acceptance of Terms</h2>
-          <p className="text-xs text-gray-600">By accessing and using the AV APPAREL website, you accept and agree to be bound by these Terms & Conditions. If you do not agree, please do not use our website or services.</p>
+          <p className="text-xs text-gray-600">By accessing and using the Alexa Victoria website, you accept and agree to be bound by these Terms & Conditions. If you do not agree, please do not use our website or services.</p>
         </section>
 
         <section>
@@ -103,7 +103,7 @@ export default function TermsConditionsPage() {
 
         <section>
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">12. Contact</h2>
-          <p className="text-xs text-gray-600">For questions about these Terms, please reach out via our <Link href="/contact" className="underline hover:text-black">Contact Form</Link> or email legal@avapparel.com.</p>
+          <p className="text-xs text-gray-600">For questions about these Terms, please reach out via our <Link href="/contact" className="underline hover:text-black">Contact Form</Link> or email legal@alexavictoria.com.</p>
         </section>
       </div>
     </div>

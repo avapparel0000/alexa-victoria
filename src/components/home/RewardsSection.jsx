@@ -7,7 +7,7 @@
       <div className="figma-node n-4-97">My AV Rewards</div>
       <div className="figma-node n-4-98">Earn. Redeem. Enjoy.</div>
       <div className="figma-node n-4-99">
-        A new way to experience AV APPAREL. Unlock exclusive benefits designed
+        A new way to experience Alexa Victoria. Unlock exclusive benefits designed
         for you, every time you shop.
       </div>
       <div className="figma-node n-4-100">

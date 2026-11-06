@@ -35,7 +35,7 @@
         <div className="footer-col">
           <div className="footer-head">About</div>
           <ul className="footer-links">
-            <li><a href="#">About AV APPAREL</a></li>
+            <li><a href="#">About Alexa Victoria</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Privacy Commitment</a></li>
             <li><a href="#">Sustainability + Inclusivity</a></li>
@@ -76,7 +76,7 @@
         <div className="footer-meta">
           <span className="footer-webid">Web ID: 353163256</span>
           <span className="footer-pipe">|</span>
-          <span className="footer-copy">Copyright © 2026 AV APPAREL. All rights reserved.</span>
+          <span className="footer-copy">Copyright © 2026 Alexa Victoria. All rights reserved.</span>
         </div>
         <div className="footer-country">
           <img src="https://www.figma.com/api/mcp/asset/c81b912d-874a-4549-bc4e-03acada69939" alt="" />

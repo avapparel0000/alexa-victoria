@@ -65,7 +65,7 @@
 
           <div className="free-returns">My AV Rewards members enjoy free returns.</div>
           <div className="help-block">
-            100% Authentic AV APPAREL<br />
+            100% Authentic Alexa Victoria<br />
             Need Help? Customer Support 866.513.0513
           </div>
           <div className="help-links">

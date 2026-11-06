@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">2. How We Use Your Information</h2>
           <ul className="list-disc pl-5 space-y-1 text-xs text-gray-600">
             <li>Process and fulfill your orders, including sending order confirmations and shipping updates</li>
-            <li>Manage your AV APPAREL account and rewards membership</li>
+            <li>Manage your Alexa Victoria account and rewards membership</li>
             <li>Send promotional communications (with your consent), including new arrivals, sales, and exclusive offers</li>
             <li>Improve our website, products, and services through analytics</li>
             <li>Detect and prevent fraud or unauthorized activity</li>
@@ -82,8 +82,8 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">9. Contact Us</h2>
           <p className="text-xs text-gray-600">For privacy-related inquiries, please contact us at:</p>
           <div className="mt-2 text-xs text-gray-600">
-            <p>AV APPAREL Privacy Team</p>
-            <p>Email: privacy@avapparel.com</p>
+            <p>Alexa Victoria Privacy Team</p>
+            <p>Email: privacy@alexavictoria.com</p>
             <p>Or use our <Link href="/contact" className="underline hover:text-black">Contact Form</Link></p>
           </div>
         </section>

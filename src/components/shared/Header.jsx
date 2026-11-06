@@ -119,7 +119,7 @@ export default function Header() {
           <Link href="/" className="flex-shrink-0 mr-4 min-w-0">
             <img
               src="/home-v2/assets/images/logo-dark.png"
-              alt="AV APPAREL"
+              alt="Alexa Victoria"
               className="h-8 nav:h-10 w-auto object-contain brightness-0"
               style={{ width: "60px" }}
             />

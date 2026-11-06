@@ -24,7 +24,7 @@ export default function LiveInSection() {
     <>
       {/* Half-width heading */}
       <div className="figma-node n-4-79">
-        <div className="figma-node n-4-80">Live in AV APPAREL</div>
+        <div className="figma-node n-4-80">Live in Alexa Victoria</div>
         <div className="figma-node n-4-81">
           Live like an icon. Shop our latest campaigns.
         </div>

@@ -272,7 +272,7 @@ export default function CheckoutBagPage() {
             </Link>
 
             <p className="text-xs text-gray-500 text-center mb-2">My AV Rewards members enjoy free returns.</p>
-            <p className="text-xs text-gray-500 text-center">100% Authentic AV APPAREL</p>
+            <p className="text-xs text-gray-500 text-center">100% Authentic Alexa Victoria</p>
             <div className="flex items-center justify-center gap-2 mt-2">
               <Link href="/shipping-returns" className="text-xs text-gray-500 underline">Shipping Info</Link>
               <span className="text-gray-300">|</span>
