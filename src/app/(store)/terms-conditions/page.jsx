@@ -67,7 +67,7 @@ export default function TermsConditionsPage() {
         </section>
 
         <section>
-          <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">7. AV APPAREL Rewards</h2>
+          <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">7. Alexa Victoria Rewards</h2>
           <ul className="list-disc pl-5 space-y-1 text-xs text-gray-600">
             <li>Points are earned at a rate of 1 point per $1 spent</li>
             <li>Points have no cash value and cannot be transferred</li>
@@ -78,7 +78,7 @@ export default function TermsConditionsPage() {
 
         <section>
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">8. Intellectual Property</h2>
-          <p className="text-xs text-gray-600">All content on this website — including logos, text, images, graphics, and design — is the property of AV APPAREL and protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our written consent.</p>
+          <p className="text-xs text-gray-600">All content on this website — including logos, text, images, graphics, and design — is the property of Alexa Victoria and protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our written consent.</p>
         </section>
 
         <section>
@@ -93,7 +93,7 @@ export default function TermsConditionsPage() {
 
         <section>
           <h2 className="text-xs font-medium tracking-wider uppercase text-black mb-3">10. Limitation of Liability</h2>
-          <p className="text-xs text-gray-600">To the maximum extent permitted by law, AV APPAREL shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services.</p>
+          <p className="text-xs text-gray-600">To the maximum extent permitted by law, Alexa Victoria shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services.</p>
         </section>
 
         <section>
