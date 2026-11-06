@@ -138,21 +138,21 @@ export default function ContactPage() {
                 <FiPhone size={16} className="mt-0.5 text-gray-500" />
                 <div>
                   <p className="text-sm font-medium">Phone</p>
-                  <p className="text-xs text-gray-500">1-800-294-7978</p>
+                  <p className="text-xs text-gray-500">(1)501-579-9000</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <FiMail size={16} className="mt-0.5 text-gray-500" />
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-xs text-gray-500">support@avapparel.com</p>
+                  <p className="text-xs text-gray-500">info@alexavictoria.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <FiMapPin size={16} className="mt-0.5 text-gray-500" />
                 <div>
                   <p className="text-sm font-medium">Headquarters</p>
-                  <p className="text-xs text-gray-500">205 W 39th St, New York, NY 10018</p>
+                  <p className="text-xs text-gray-500">15390 Oak Glen Dr Alexander AR 72002</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
