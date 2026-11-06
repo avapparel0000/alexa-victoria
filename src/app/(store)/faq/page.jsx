@@ -9,7 +9,7 @@ const FAQ_SECTIONS = [
     questions: [
       {
         q: "How long does shipping take?",
-        a: "Standard shipping takes 3-5 business days. Express shipping delivers in 1-2 business days. Orders placed before 2 PM EST on business days ship the same day.",
+        a: "Standard shipping takes 3-5 business days. Express shipping delivers in 1-2 business days. Orders placed before 2 PM CST on business days ship the same day.",
       },
       {
         q: "How much does shipping cost?",

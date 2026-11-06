@@ -52,7 +52,7 @@ export default function ShippingReturnsPage() {
           </div>
           <div>
             <h3 className="font-medium text-black mb-2">Processing Time</h3>
-            <p>Orders placed before 2:00 PM EST on business days are processed and shipped the same day. Orders placed after 2:00 PM EST or on weekends/holidays will be processed the next business day.</p>
+            <p>Orders placed before 2:00 PM CST on business days are processed and shipped the same day. Orders placed after 2:00 PM CST or on weekends/holidays will be processed the next business day.</p>
           </div>
           <div>
             <h3 className="font-medium text-black mb-2">Tracking Your Order</h3>
