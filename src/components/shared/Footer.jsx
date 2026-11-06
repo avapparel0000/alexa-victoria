@@ -63,7 +63,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold tracking-wide mb-4">About</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-sm text-gray-400 hover:text-white">About AV APPAREL</Link></li>
+              <li><Link href="/about" className="text-sm text-gray-400 hover:text-white">About Alexa Victoria</Link></li>
               <li><Link href="/sustainability" className="text-sm text-gray-400 hover:text-white">Sustainability</Link></li>
               <li><Link href="/careers" className="text-sm text-gray-400 hover:text-white">Careers</Link></li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
             <span>|</span>
             <Link href="/cookie-settings" className="hover:text-gray-300">Cookie Settings</Link>
           </div>
-          <p>© 2026 AV APPAREL. All Rights Reserved.</p>
+          <p>© 2026 Alexa Victoria. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
