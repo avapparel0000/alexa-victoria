@@ -159,8 +159,8 @@ export default function ContactPage() {
                 <FiClock size={16} className="mt-0.5 text-gray-500" />
                 <div>
                   <p className="text-sm font-medium">Customer Service Hours</p>
-                  <p className="text-xs text-gray-500">Mon–Fri: 9:00 AM – 9:00 PM EST</p>
-                  <p className="text-xs text-gray-500">Sat–Sun: 10:00 AM – 6:00 PM EST</p>
+                  <p className="text-xs text-gray-500">Mon–Fri: 9:00 AM – 9:00 PM CST</p>
+                  <p className="text-xs text-gray-500">Sat–Sun: 10:00 AM – 6:00 PM CST</p>
                 </div>
               </div>
             </div>
